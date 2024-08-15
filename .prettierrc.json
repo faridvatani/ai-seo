@@ -1,0 +1,7 @@
+{
+  "editorconfig": true,
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "quoteProps": "as-needed"
+}
