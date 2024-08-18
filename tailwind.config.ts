@@ -24,7 +24,17 @@ const config: Config = {
       md: "768px",
       lg: "1200px",
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        moveBg: {
+          "0%": { backgroundPosition: "100% 100%" },
+          "100%": { backgroundPosition: "0% 0%" },
+        },
+      },
+      animation: {
+        moveBg: "moveBg 60s linear infinite",
+      },
+    },
   },
   plugins: [],
 };
