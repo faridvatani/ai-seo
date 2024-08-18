@@ -12,8 +12,10 @@ const navItems = [
 export const Header = () => {
   return (
     <header className="sticky top-0 py-4 border-b border-white/15 md:border-none z-10">
+      <div className="absolute inset-0 backdrop-blur -z-10 md:hidden"></div>
       <div className="container">
-        <div className="flex justify-between items-center md:border border-white/15 md:p-2.5 rounded-xl max-w-2xl mx-auto backdrop-blur">
+        <div className="relative flex justify-between items-center md:border border-white/15 md:p-2.5 rounded-xl max-w-2xl mx-auto">
+          <div className="absolute inset-0 backdrop-blur -z-10 hidden md:block"></div>
           <div>
             <div className="inline-flex items-center justify-center size-10 border border-white/15 rounded-lg">
               <Logo className="size-8" />
