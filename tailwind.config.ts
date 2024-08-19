@@ -27,12 +27,12 @@ const config: Config = {
     extend: {
       keyframes: {
         moveBg: {
-          "0%": { backgroundPosition: "100% 100%" },
-          "100%": { backgroundPosition: "0% 0%" },
+          "0%": { backgroundPosition: "100% 0%" },
+          "100%": { backgroundPosition: "0% 100%" },
         },
       },
       animation: {
-        moveBg: "moveBg 60s linear infinite",
+        moveBg: "moveBg 10s linear infinite",
       },
     },
   },
