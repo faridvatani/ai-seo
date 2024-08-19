@@ -10,6 +10,15 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const logos = [
+  AcmeLogo,
+  PulseLogo,
+  EchoLogo,
+  CelestialLogo,
+  ApexLogo,
+  QuantumLogo,
+];
+
 export const LogoTicker = () => {
   return (
     <section className="py-20 md:py-24">
@@ -29,20 +38,7 @@ export const LogoTicker = () => {
               }}
               className="flex flex-none gap-14 pr-14 -translate-x-1/2"
             >
-              {[
-                AcmeLogo,
-                PulseLogo,
-                EchoLogo,
-                CelestialLogo,
-                ApexLogo,
-                QuantumLogo,
-                AcmeLogo,
-                PulseLogo,
-                EchoLogo,
-                CelestialLogo,
-                ApexLogo,
-                QuantumLogo,
-              ].map((logo, index) => (
+              {[...logos, ...logos].map((logo, index) => (
                 <Image
                   key={index}
                   src={logo.src}
