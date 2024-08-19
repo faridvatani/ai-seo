@@ -30,7 +30,7 @@ export const Testimonials = () => {
                       className="size-11 rounded-lg grayscale"
                     />
                   </div>
-                  <div className="">
+                  <div className="flex flex-col">
                     <span>{testimonial.name}</span>
                     <span className="text-sm text-white/50">
                       {testimonial.title}
