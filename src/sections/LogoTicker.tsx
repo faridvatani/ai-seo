@@ -1,3 +1,4 @@
+"use client";
 import {
   AcmeLogo,
   ApexLogo,
@@ -6,6 +7,7 @@ import {
   PulseLogo,
   EchoLogo,
 } from "@/assets";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const LogoTicker = () => {
@@ -16,8 +18,17 @@ export const LogoTicker = () => {
           <div className="flex-1 md:flex-none">
             <h2>Trusted by top innovative teams</h2>
           </div>
-          <div className="flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-            <div className="flex flex-none gap-14">
+          <div className="flex flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+            <motion.div
+              initial={{ translateX: "-50%" }}
+              animate={{ translateX: "0" }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex flex-none gap-14 pr-14 -translate-x-1/2"
+            >
               {[
                 AcmeLogo,
                 PulseLogo,
@@ -25,9 +36,15 @@ export const LogoTicker = () => {
                 CelestialLogo,
                 ApexLogo,
                 QuantumLogo,
-              ].map((logo) => (
+                AcmeLogo,
+                PulseLogo,
+                EchoLogo,
+                CelestialLogo,
+                ApexLogo,
+                QuantumLogo,
+              ].map((logo, index) => (
                 <Image
-                  key={logo.src}
+                  key={index}
                   src={logo.src}
                   width={logo.width}
                   height={logo.height}
@@ -35,7 +52,7 @@ export const LogoTicker = () => {
                   className="h-6 w-auto"
                 />
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
