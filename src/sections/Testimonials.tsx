@@ -1,4 +1,6 @@
+"use client";
 import { testimonials } from "@/data/data";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const Testimonials = () => {
@@ -12,9 +14,22 @@ export const Testimonials = () => {
           Our revolutionary AI SEO tools have transformed our clients&apos;
           strategies.
         </p>
-        <div className="overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-          <div className="flex gap-5">
-            {testimonials.map((testimonial, index) => (
+        <div className="flex overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+          <motion.div
+            initial={{
+              translateX: "-50%",
+            }}
+            animate={{
+              translateX: "0",
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex gap-5 pr-5 flex-none"
+          >
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
                 className="p-6 md:p-10 border border-white/15 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,0.3),black)] max-w-xs md:max-w-md flex-none"
@@ -39,7 +54,7 @@ export const Testimonials = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
