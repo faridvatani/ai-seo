@@ -73,13 +73,8 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Set basePath for GitHub Pages
-        run: |
-          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            echo "basePath=/ai-seo" >> .env.local
-          fi
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build --basePath /ai-seo
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

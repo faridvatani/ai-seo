@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NEXT_PUBLIC_NODE_ENV === "production";
+
 const nextConfig = {
   output: "standalone",
+  basePath: isProd ? "/ai-seo" : "",
+  assetPrefix: isProd ? "/ai-seo/" : "",
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
