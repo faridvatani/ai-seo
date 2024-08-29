@@ -76,13 +76,10 @@ jobs:
       - name: Set basePath for GitHub Pages
         run: |
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            echo "NEXT_PUBLIC_BASE_PATH=/ai-seo" >> .env.local
+            echo "basePath=/ai-seo" >> .env.local
           fi
-
       - name: Build with Next.js
-        env:
-          NEXT_PUBLIC_BASE_PATH: ${{ env.NEXT_PUBLIC_BASE_PATH }}
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build --basePath /ai-seo
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
